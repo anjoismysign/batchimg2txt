@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.llmlab</groupId>
+    <artifactId>batchimg2txt</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>24</maven.compiler.source>
+        <maven.compiler.target>24</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>me.anjoismysign.batchimg2txt.BatchImg2txt</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>26.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.anjoismysign.hahaswing</groupId>
+            <artifactId>hahaswing</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>me.anjoismysign</groupId>
+            <artifactId>aesthetic</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-google-ai-gemini</artifactId>
+            <version>1.0.0-beta3</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+            <version>1.0.0-beta3</version>
+        </dependency>
+    </dependencies>
+
+</project>
