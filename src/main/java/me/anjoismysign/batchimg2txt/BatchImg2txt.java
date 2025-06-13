@@ -136,7 +136,7 @@ public class BatchImg2txt {
         List<String> pages = new ArrayList<>();
         files.forEach(source -> {
             try {
-                String page = Img2txt.extractTextFromLocalSource(source, prompt, model);
+                String page = Img2txt.img2txtLocalSource(source, prompt, model);
                 pages.add(page);
             } catch (IOException exception) {
                 throw new RuntimeException(exception);
