@@ -64,10 +64,10 @@ public class Img2txt {
         ImageContent imageContent = ImageContent.from(base64Data, "image/png");
 
         //initialize the UserMessage
-        UserMessage userMessage = UserMessage.from(imageContent);
+        UserMessage userMessage = UserMessage.from(new TextContent(prompt),imageContent);
 
         //get output
-        ChatResponse chatResponse = model.chat(new SystemMessage(prompt),userMessage);
+        ChatResponse chatResponse = model.chat(userMessage);
         return chatResponse.aiMessage().text();
     }
 

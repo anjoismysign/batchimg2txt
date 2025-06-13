@@ -132,7 +132,7 @@ public class BatchImg2txt {
         if (!directory.isDirectory())
             throw new FileNotFoundException("Not a directory");
         DirectoryAssistant assistant = DirectoryAssistant.of(directory);
-        Collection<File> files = assistant.listRecursively("png", "jpg", "jpeg");
+        Collection<File> files = assistant.listRecursively(".png", ".jpg", ".jpeg");
         List<String> pages = new ArrayList<>();
         files.forEach(source -> {
             try {
